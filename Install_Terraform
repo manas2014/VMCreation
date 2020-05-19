@@ -1,0 +1,20 @@
+install Terraform
+To install Terraform on a Windows system, download the appropriate package from the Terraform web site.
+
+1)Go to https://www.terraform.io/downloads.html.
+2)Download the applicable package to your local system.
+3)Extract the package to the folder C:\Program Files (x86).
+This path is used as an example. However, you can also the Terraform executable to any other location in your local system.
+4)Update the path environment variable to include the folder where your Terraform executable is located.
+    4.1-Go to the Control Panel.
+    4.2-Click System.
+    4.3-On a Windows 10 system, click Advanced system settings. This option might vary in different versions of Windows.
+    The Advanced tab of the System Properties window is displayed.
+    4.4-Click Environment Variables near the bottom of the window.
+    The Environment Variables window is displayed.
+    4.5-In the System variables pane, click Path and then click Edit.
+    4.6-Click New. Add the path to the folder where your Terraform executable is located.
+    4.7-Click OK to save your changes and then click OK to exit the Environment Variables windows. Then click OK again to exit the System Properties window.
+5)To verify your installation and check the version, launch Windows PowerShell and enter: 
+    terraform -version.
+You’ll see the Terraform version displayed in the output. For example: Terraform v0.11.8
