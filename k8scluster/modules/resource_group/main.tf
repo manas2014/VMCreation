@@ -1,8 +1,8 @@
 resource "azurerm_resource_group" "rg" {
-    name     = "${var.rgname}"
-    location = "${var.location}"
+    name     = var.rgname
+    location = var.location
 
     tags = {
-        environment = "${var.environment}"
+        environment = var.environment
     }
 }

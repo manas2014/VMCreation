@@ -1,8 +1,8 @@
 resource "azurerm_network_security_group" "nsg" {
-    count               = "${length(var.nsgs)}"
-    name                = "${var.nsgs[count.index]}"
-    location            = "${var.location}"
-    resource_group_name = "${var.rgname}"
+    count               = length(var.nsgs)
+    name                = var.nsgs[count.index]
+    location            = var.location
+    resource_group_name = var.rgname
     
     security_rule {
         name                       = "SSH"
@@ -17,6 +17,6 @@ resource "azurerm_network_security_group" "nsg" {
     }
 
     tags = {
-        environment = "${var.environment}"
+        environment = var.environment
     }
 }

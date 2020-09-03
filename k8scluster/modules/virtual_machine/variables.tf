@@ -17,7 +17,7 @@ variable "nicids" {
 }
 variable "vmsize" {
     type = string
-    default =  "Standard_DS1_v2"
+    default =  "Standard_DS3_v2"
 }
 
 variable "saendpoint" {
@@ -50,4 +50,11 @@ variable "computername"{
 }
 variable "index"{
     type = number
+}
+variable "publicips" {
+  type = list(string)
+}
+variable "filename"{
+    type = string
+    description = "kubernetes setup shell script filename"
 }
