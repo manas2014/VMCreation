@@ -1,63 +1,31 @@
-Step-1->
-    Create below files
-   - main.tf,
-   - providers.tf,
-   - terraform.tfvars,
-    -variable.tf
+Step -1 ->:
+
+1 - Install Terraform version v0.14.9
+    Download from
+    https://www.terraform.io/downloads.html
+    https://releases.hashicorp.com/terraform/ (For Specific Version)
+2 - Install Git 
+    https://git-scm.com/downloads
+    
+Step - 2 ->
+ Clone the scripts into a folder
+ 
+Step-3->
+   
+   Create a service principle in azure and update in the variable.tf file
+   Login into Azure ->Open Terminal in Azure -> Paste the below command -> Copy the output in a file for future reference and update in the variable.tf
+   az ad sp create-for-rbac --name ServicePrincipalName
+ 
 Step-2->
   terraform init
-  Note-What initialzation does?
-      It downloads the provider like aws,azure if it doesnot have.
-Step-3->
-  terraform plan -out {anyname}.tfpl
   
-  Will looking into the current configuration files and load the varibales(tfvars)
-  -out -> to store the plan
-
-Environment Variables
-Simple values
-$ export TF_VAR_image_id=ami-abc123
-Complex-typed Values
-$ export TF_VAR_availability_zone_names='["us-west-1b","us-west-1d"]'
-$ terraform plan -out {anyname}.tfpl
+Step-3->
+terraform plan
 
 
 Step-4-> Create the resources from output plan
 
-  --- terraform apply {anyname}.tfpl
-
-  --- terraform apply -var-file="testing.tfvars" {anyname}.tfpl
-
-Output:
-State path: terraform.tfstate
-Creates a state file 
-terraform destory {file}.tfstate-it delete all the resources created using this state file
-
-Note->
-Terraform loads variables in the following order, with later sources taking precedence over earlier ones:
-
-Environment variables
-The terraform.tfvars file, if present.
-The terraform.tfvars.json file, if present.
-Any *.auto.tfvars or *.auto.tfvars.json files, processed in lexical order of their filenames.
-Any -var and -var-file options on the command line, in the order they are provided. (This includes variables set by a Terraform Cloud workspace.)
-
-Terraform Provisioners->
-Postdeployment configuration 
-Post deployment Configruation Management Software -Puppet,Chef
-Move resources from Local to Remote
-Provisioner examples:
-file
-local-exec
-remote-exec
-provisioner "file"{
-connection {
-    type = "ssh"
-    user = "root"
-    }
-    source = ""
-    destination = ""
-}
-}
-provisioer "local-exec"{
-}
+  terraform apply  
+  
+  Press "yes"
+Stept-4 -> Finish.Go and Check in Azure 
