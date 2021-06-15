@@ -1,6 +1,6 @@
 Step -1 ->:
 
-1 - Install Terraform version v0.14.9
+1 - Install Terraform version v0.14.9(Follow another file InstallTerraform )
     Download from
     https://www.terraform.io/downloads.html
     https://releases.hashicorp.com/terraform/ (For Specific Version)
